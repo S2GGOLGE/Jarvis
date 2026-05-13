@@ -1,0 +1,68 @@
+# =========================
+# BUILD OUTPUT
+# =========================
+bin/
+obj/
+out/
+publish/
+dist/
+
+# =========================
+# USER / IDE FILES
+# =========================
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.cache
+
+# =========================
+# LOG FILES
+# =========================
+*.log
+logs/
+
+# =========================
+# ENV / SECRET DATA
+# =========================
+.env
+appsettings.Development.json
+appsettings.Production.json
+
+# API Keys / Sensitive
+secrets.json
+
+# =========================
+# DATABASE
+# =========================
+*.mdf
+*.ldf
+*.sqlite
+*.db
+
+# =========================
+# NODE (eğer frontend varsa)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# TEMP FILES
+# =========================
+*.tmp
+*.temp
+*.bak
+
+# =========================
+# OS FILES
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# VISUAL STUDIO PUBLISH
+# =========================
+PublishProfiles/
