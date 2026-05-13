@@ -18,4 +18,4 @@ C# tabanlı kişisel sesli asistan projesi.
 ## Kurulum
 
 ```bash
-git clone REPO_LINK
+git clone 
