@@ -1,0 +1,14 @@
+Y:\Sesli Asistan\Aı\Aı\bin\Debug\net10.0\Aı.exe
+Y:\Sesli Asistan\Aı\Aı\bin\Debug\net10.0\Aı.deps.json
+Y:\Sesli Asistan\Aı\Aı\bin\Debug\net10.0\Aı.runtimeconfig.json
+Y:\Sesli Asistan\Aı\Aı\bin\Debug\net10.0\Aı.dll
+Y:\Sesli Asistan\Aı\Aı\bin\Debug\net10.0\Aı.pdb
+Y:\Sesli Asistan\Aı\Aı\obj\Debug\net10.0\Aı.GeneratedMSBuildEditorConfig.editorconfig
+Y:\Sesli Asistan\Aı\Aı\obj\Debug\net10.0\Aı.AssemblyInfoInputs.cache
+Y:\Sesli Asistan\Aı\Aı\obj\Debug\net10.0\Aı.AssemblyInfo.cs
+Y:\Sesli Asistan\Aı\Aı\obj\Debug\net10.0\Aı.csproj.CoreCompileInputs.cache
+Y:\Sesli Asistan\Aı\Aı\obj\Debug\net10.0\Aı.dll
+Y:\Sesli Asistan\Aı\Aı\obj\Debug\net10.0\refint\Aı.dll
+Y:\Sesli Asistan\Aı\Aı\obj\Debug\net10.0\Aı.pdb
+Y:\Sesli Asistan\Aı\Aı\obj\Debug\net10.0\Aı.genruntimeconfig.cache
+Y:\Sesli Asistan\Aı\Aı\obj\Debug\net10.0\ref\Aı.dll

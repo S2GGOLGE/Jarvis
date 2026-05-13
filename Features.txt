@@ -1,0 +1,10 @@
+Features (Requirements)
+Planlama Kabiliyeti: Sistem üzerinden zamanlama/planlama yapılabilecek.
+
+Mesajlaşma Entegrasyonu: Belirlenen isim/hesap adına mesaj atma özelliği.
+
+İnteraktif Sohbet: Kullanıcı ile sohbet edebilme yeteneği (Chatbot fonksiyonu).
+
+Veri Erişimi: İlgili veri kaynaklarına erişim ve veri işleme.
+
+Sunucu Yetkilendirmesi: "Home" sunucusu üzerinde tam yetki/yönetim imkanı.
