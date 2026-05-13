@@ -18,4 +18,4 @@ C# tabanlı kişisel sesli asistan projesi.
 ## Kurulum
 
 ```bash
-git clone 
+git clone https://github.com/S2GGOLGE
