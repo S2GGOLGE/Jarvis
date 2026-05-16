@@ -295,3 +295,25 @@ def active_window_screenshot(output_path: Path) -> dict:
             }
         except Exception as exc:
             return {"ok": False, "error": "capture_failed", "detail": str(exc)}
+
+
+def full_screen_screenshot(output_path: Path) -> dict:
+    try:
+        import pyautogui
+    except Exception as exc:
+        return {"ok": False, "error": "pyautogui_missing", "detail": f"pyautogui yuklu degil: {exc}"}
+
+    try:
+        image = pyautogui.screenshot()
+        image.save(output_path)
+        width, height = image.size
+        return {
+            "ok": True,
+            "image_path": str(output_path),
+            "owner_name": "Windows",
+            "window_title": "Tum ekran",
+            "bounds": {"x": 0, "y": 0, "width": width, "height": height},
+            "detail": "full_screen",
+        }
+    except Exception as exc:
+        return {"ok": False, "error": "capture_failed", "detail": str(exc)}

@@ -427,9 +427,9 @@ TOOL_DECLARATIONS = [
     {
         "name": "analyze_screen",
         "description": (
-            "Aktif pencerenin ekran goruntusunu alip Gemini vision ile analiz eder. "
+            "Aktif pencerenin veya tum ekranin ekran goruntusunu alip Gemini vision ile analiz eder. "
             "Kullanici ekranda ne oldugunu, bir hatayi, gorunen metni, butonlari veya pencere icerigini sordugunda kullan. "
-            "Bu surum yalnizca aktif pencereyi destekler."
+            "Kullanici tum ekrani/ekrani gormeni isterse target=full_screen kullan; belirli pencere icin active_window kullan."
         ),
         "parameters": {
             "type": "OBJECT",
@@ -440,7 +440,7 @@ TOOL_DECLARATIONS = [
                 },
                 "target": {
                     "type": "STRING",
-                    "description": "Su an sadece active_window desteklenir."
+                    "description": "active_window | full_screen. Varsayilan active_window."
                 }
             },
             "required": ["query"]

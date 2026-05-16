@@ -13,7 +13,7 @@ from google.genai import errors, types
 from PIL import Image, ImageStat
 
 from app_config import get_app_config_value
-from actions.windows_utils import active_window_screenshot
+from actions.windows_utils import active_window_screenshot, full_screen_screenshot
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,15 +33,38 @@ def _screen_permission_message() -> str:
     )
 
 
+def _normalize_target(target: str) -> str:
+    normalized = (target or "active_window").strip().lower().replace("-", "_")
+    aliases = {
+        "active": "active_window",
+        "window": "active_window",
+        "aktif_pencere": "active_window",
+        "pencere": "active_window",
+        "screen": "full_screen",
+        "full": "full_screen",
+        "fullscreen": "full_screen",
+        "full_screen": "full_screen",
+        "entire_screen": "full_screen",
+        "all_screen": "full_screen",
+        "tum_ekran": "full_screen",
+        "tüm_ekran": "full_screen",
+        "ekran": "full_screen",
+    }
+    return aliases.get(normalized, normalized)
+
+
 def _run_helper(mode: str, timeout: int = 20) -> tuple[bool, str]:
-    if mode != "capture_active_window":
+    if mode not in {"capture_active_window", "capture_full_screen"}:
         return False, f"Bilinmeyen ekran modu: {mode}"
     try:
         handle = tempfile.NamedTemporaryFile(prefix="jarvis-screen-helper-", suffix=".json", delete=False)
         output_path = Path(handle.name)
         handle.close()
         image_path = output_path.with_suffix(".png")
-        payload = active_window_screenshot(image_path)
+        if mode == "capture_full_screen":
+            payload = full_screen_screenshot(image_path)
+        else:
+            payload = active_window_screenshot(image_path)
         output_path.unlink(missing_ok=True)
         return True, json.dumps(payload, ensure_ascii=False)
     except Exception as exc:
@@ -130,7 +153,7 @@ def _vision_prompt(query: str, owner_name: str, window_title: str) -> str:
     user_query = (query or "Ekranda ne var?").strip()
     return (
         "Sen Windows uzerinde JARVIS icin ekran analizi yapan bir goruntu yorumlayicisisin.\n"
-        "Asagidaki ekran goruntusu aktif pencereye ait.\n"
+        "Asagidaki ekran goruntusu kullanicinin sectigi ekran hedefine ait.\n"
         f"Pencere baglami: {label}\n\n"
         "Gorevlerin:\n"
         "1. Pencerenin genel amacini 1-2 cumlede acikla.\n"
@@ -249,11 +272,12 @@ def _analyze_with_gemini(query: str, image_path: Path, owner_name: str, window_t
 
 
 def analyze_screen(query: str, target: str = "active_window") -> str:
-    target = (target or "active_window").strip().lower()
-    if target != "active_window":
-        return "Screen Vision v1 yalnizca aktif pencere analizini destekliyor."
+    target = _normalize_target(target)
+    if target not in {"active_window", "full_screen"}:
+        return "Screen Vision active_window veya full_screen hedeflerini destekliyor."
 
-    ok, raw = _run_helper("capture_active_window", timeout=20)
+    mode = "capture_full_screen" if target == "full_screen" else "capture_active_window"
+    ok, raw = _run_helper(mode, timeout=20)
     if not ok:
         low = raw.lower()
         if "permission" in low or "screen recording" in low:

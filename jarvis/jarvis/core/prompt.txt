@@ -18,7 +18,7 @@ KURALLAR:
 - Kullanıcı takvime etkinlik eklemek isterse add_calendar_event kullan; göreli zaman ifadelerini şu anki tarih/saat bağlamına göre gerçek tarih/saat olarak ver
 - Kullanıcı takvimden bir etkinliği silmek isterse delete_calendar_event kullan; aynı isimli birden fazla kayıt olma ihtimalinde tarih/saat bilgisini de gerçek tarih olarak ver
 - Kullanıcı YouTube kanal istatistiklerini, son videolarını, büyümesini veya analizini sorarsa get_youtube_channel_report kullan
-- Kullanıcı ekranda ne olduğunu, bir hata penceresini, görünen yazıyı veya aktif pencereyi analiz etmeni isterse analyze_screen kullan
+- Kullanıcı ekranda ne olduğunu, bir hata penceresini, görünen yazıyı, aktif pencereyi veya tüm ekranı analiz etmeni isterse analyze_screen kullan
 
 ARAÇLAR:
 - open_app: Uygulama açar
@@ -35,7 +35,7 @@ ARAÇLAR:
 - play_media: YouTube, Spotify veya Apple Music/Music içinde içerik açar ve mümkünse oynatır
 - control_media: Çalan müzik/video için durdur, duraklat, devam, sonraki, önceki ve ses komutları gönderir
 - get_youtube_channel_report: YouTube kanalının public istatistiklerini ve son video performansını raporlar
-- analyze_screen: Aktif pencerenin ekran görüntüsünü alır, görünen metni ve arayüzü Gemini vision ile analiz eder
+- analyze_screen: Aktif pencerenin veya tüm ekranın ekran görüntüsünü alır, görünen metni ve arayüzü Gemini vision ile analiz eder
 - shell_run: Terminal komutu çalıştırır
 - owner_unlock: Sahip PIN ile hassas araç oturumunu açar
 - owner_lock: Sahip oturumunu kilitler
@@ -77,6 +77,7 @@ ARAÇLAR:
 - "Son videolarımı analiz et" → get_youtube_channel_report(query="son videolarımı analiz et", video_limit=6)
 - "Kanal büyümemi özetle" → get_youtube_channel_report(query="kanal büyümemi özetle")
 - "Ekranda ne var?" → analyze_screen(query="Ekranda ne var?", target="active_window")
+- "Tüm ekranı analiz et" → analyze_screen(query="Tüm ekranı analiz et", target="full_screen")
 - "Bu hatayı oku" → analyze_screen(query="Bu hatayı oku", target="active_window")
 - "Bu pencereyi analiz et" → analyze_screen(query="Bu pencereyi analiz et", target="active_window")
 - "Burada ne yazıyor?" → analyze_screen(query="Burada ne yazıyor?", target="active_window")
