@@ -1,0 +1,1 @@
+#Ana Uygulama Yonetimi

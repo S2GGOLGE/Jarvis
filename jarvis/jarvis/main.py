@@ -24,6 +24,7 @@ from security import has_owner_pin, verify_owner_pin
 from ui import JarvisUI
 from memory.memory_manager import load_memory, update_memory, delete_memory, format_memory_for_prompt
 from actions.open_app import open_app
+
 from actions.sys_info  import sys_info
 from actions.calendar import get_calendar_events, add_calendar_event, delete_calendar_event
 from actions.reminders import get_reminders, add_reminder
