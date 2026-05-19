@@ -13,6 +13,7 @@ import threading
 import traceback
 import os
 import re
+import socket
 from pathlib import Path
 
 import pyaudio  # type: ignore[reportMissingModuleSource]
@@ -1227,6 +1228,34 @@ def main():
     threading.Thread(target=runner, daemon=True).start()
     ui.root.mainloop()
 
+def tcp_sunucuya_baglan(ip, port):
+    # 1. Soket nesnesi oluştur (IPv4 ve TCP protokolü)
+    istemci_soketi = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    
+    try:
+        # 2. C# sunucusuna bağlan
+        print(f"Sunucuya bağlanılıyor: {ip}:{port}")
+        istemci_soketi.connect((ip, port))
+        print("Bağlantı başarılı!")
+        
+        # 3. Sunucuya veri gönder (C# tarafı genelde UTF-8 bekler)
+        mesaj = "Jarvis"
+        istemci_soketi.sendall(mesaj.encode('utf-8'))
+        print(f"Gönderilen mesaj: {mesaj}")
+        
+        # 4. Sunucudan gelen yanıtı al (En fazla 1024 bayt)
+        yanit = istemci_soketi.recv(1024)
+        print(f"Sunucudan gelen yanıt: {yanit.decode('utf-8')}")
+        
+    except Exception as e:
+        print(f"Bağlantı hatası: {e}")
+        
+    finally:
+        # 5. Soketi güvenli bir şekilde kapat
+        istemci_soketi.close()
+        print("Bağlantı kapatıldı.")
 
+# C# sunucunuzun IP adresi ve Port numarasını yazın
+tcp_sunucuya_baglan('127.0.0.1', 8586)
 if __name__ == "__main__":
     main()
