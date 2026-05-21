@@ -1,0 +1,799 @@
+{
+  "root": "Y:\\Sesli Asistan\\JAVİS V.02",
+  "dry_run": false,
+  "backup_dir": "Y:\\Sesli Asistan\\JAVİS V.02\\backup_before_refactor",
+  "conflict_mode": "skip",
+  "new_project_structure": "jarvis/\n  main.py\n  requirements.txt\n  pyrightconfig.json\n  setup.ps1\n  app/\n    __init__.py\n    bootstrap.py\n    runtime.py\n  config/\n    __init__.py\n    app_config.py\n    live_config.py\n    api_keys.example.json\n    api_keys.json\n  core/\n    __init__.py\n    assistant.py\n    prompt.txt\n    live/\n      __init__.py\n      session.py\n      audio_io.py\n      message_parser.py\n      tool_executor.py\n      state.py\n  tools/\n    __init__.py\n    declarations.py\n    schema.py\n    response.py\n  automation/\n    __init__.py\n    browser.py\n    media.py\n    shell.py\n    system_power.py\n    whatsapp.py\n    windows_utils.py\n  integrations/\n    __init__.py\n    calendar.py\n    weather.py\n    youtube_stats.py\n    reminders.py\n    screen_vision.py\n    tts.py\n    health.py\n    open_app.py\n    system_info.py\n  memory/\n    __init__.py\n    manager.py\n    memory.example.json\n    phone_book.example.json\n  security/\n    __init__.py\n    owner.py\n  ui/\n    __init__.py\n    desktop.py\n  assets/\n    icons/\n    fonts/\n    sfx/\n  network/\n    __init__.py\n    tcp_client.py\n  utils/\n    __init__.py\n    logging.py\n    paths.py\n    text.py\n    timing.py\n  scripts/\n    deneme.py",
+  "migration_map": {
+    "app_config.py": "config/app_config.py",
+    "core/config_live.py": "config/live_config.py",
+    "core/Tolls.py": "tools/declarations.py",
+    "core/live/jarvislive.py": "core/live/session.py",
+    "actions/browser.py": "automation/browser.py",
+    "actions/media.py": "automation/media.py",
+    "actions/shell.py": "automation/shell.py",
+    "actions/system_power.py": "automation/system_power.py",
+    "actions/whatsapp.py": "automation/whatsapp.py",
+    "actions/windows_utils.py": "automation/windows_utils.py",
+    "actions/calendar.py": "integrations/calendar.py",
+    "actions/weather.py": "integrations/weather.py",
+    "actions/youtube_stats.py": "integrations/youtube_stats.py",
+    "actions/reminders.py": "integrations/reminders.py",
+    "actions/screen_vision.py": "integrations/screen_vision.py",
+    "actions/tts.py": "integrations/tts.py",
+    "actions/health.py": "integrations/health.py",
+    "actions/open_app.py": "integrations/open_app.py",
+    "actions/sys_info.py": "integrations/system_info.py",
+    "memory/memory_manager.py": "memory/manager.py",
+    "memory/_init_.py": "memory/__init__.py",
+    "security.py": "security/owner.py",
+    "ui/ui.py": "ui/desktop.py",
+    "ui/_init_.py": "ui/__init__.py",
+    "Config/api_keys.json": "config/api_keys.json",
+    "Config/api_keys.example.json": "config/api_keys.example.json",
+    "Icon/youtube.png": "assets/icons/youtube.png",
+    "Icon/youtube-logo.png": "assets/icons/youtube-logo.png",
+    "Icon/instagram.png": "assets/icons/instagram.png",
+    "Icon/instagram-logo.png": "assets/icons/instagram-logo.png",
+    "Fonts/Grift-Regular.ttf": "assets/fonts/Grift-Regular.ttf",
+    "Fonts/Grift-ExtraBold.ttf": "assets/fonts/Grift-ExtraBold.ttf",
+    "Fonts/Grift-Bold.ttf": "assets/fonts/Grift-Bold.ttf",
+    "SFX/Think.mp3": "assets/sfx/Think.mp3",
+    "SFX/Start.mp3": "assets/sfx/Start.mp3",
+    "SFX/HUD.mp3": "assets/sfx/HUD.mp3",
+    "SFX/Error.mp3": "assets/sfx/Error.mp3",
+    "SFX/Done.mp3": "assets/sfx/Done.mp3",
+    "deneme.py": "scripts/deneme.py"
+  },
+  "events": [
+    {
+      "action": "scan",
+      "source": "",
+      "destination": "",
+      "status": "ok",
+      "detail": "root=Y:\\Sesli Asistan\\JAVİS V.02"
+    },
+    {
+      "action": "scan",
+      "source": "",
+      "destination": "",
+      "status": "ok",
+      "detail": "existing=39 missing=0"
+    },
+    {
+      "action": "backup",
+      "source": "app_config.py",
+      "destination": "backup_before_refactor\\app_config.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "core/config_live.py",
+      "destination": "backup_before_refactor\\core\\config_live.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "core/Tolls.py",
+      "destination": "backup_before_refactor\\core\\Tolls.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "core/live/jarvislive.py",
+      "destination": "backup_before_refactor\\core\\live\\jarvislive.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/browser.py",
+      "destination": "backup_before_refactor\\actions\\browser.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/media.py",
+      "destination": "backup_before_refactor\\actions\\media.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/shell.py",
+      "destination": "backup_before_refactor\\actions\\shell.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/system_power.py",
+      "destination": "backup_before_refactor\\actions\\system_power.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/whatsapp.py",
+      "destination": "backup_before_refactor\\actions\\whatsapp.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/windows_utils.py",
+      "destination": "backup_before_refactor\\actions\\windows_utils.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/calendar.py",
+      "destination": "backup_before_refactor\\actions\\calendar.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/weather.py",
+      "destination": "backup_before_refactor\\actions\\weather.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/youtube_stats.py",
+      "destination": "backup_before_refactor\\actions\\youtube_stats.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/reminders.py",
+      "destination": "backup_before_refactor\\actions\\reminders.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/screen_vision.py",
+      "destination": "backup_before_refactor\\actions\\screen_vision.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/tts.py",
+      "destination": "backup_before_refactor\\actions\\tts.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/health.py",
+      "destination": "backup_before_refactor\\actions\\health.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/open_app.py",
+      "destination": "backup_before_refactor\\actions\\open_app.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "actions/sys_info.py",
+      "destination": "backup_before_refactor\\actions\\sys_info.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "memory/memory_manager.py",
+      "destination": "backup_before_refactor\\memory\\memory_manager.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "memory/_init_.py",
+      "destination": "backup_before_refactor\\memory\\_init_.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "security.py",
+      "destination": "backup_before_refactor\\security.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "ui/ui.py",
+      "destination": "backup_before_refactor\\ui\\ui.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "ui/_init_.py",
+      "destination": "backup_before_refactor\\ui\\_init_.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "Config/api_keys.json",
+      "destination": "backup_before_refactor\\Config\\api_keys.json",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "Config/api_keys.example.json",
+      "destination": "backup_before_refactor\\Config\\api_keys.example.json",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "Icon/youtube.png",
+      "destination": "backup_before_refactor\\Icon\\youtube.png",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "Icon/youtube-logo.png",
+      "destination": "backup_before_refactor\\Icon\\youtube-logo.png",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "Icon/instagram.png",
+      "destination": "backup_before_refactor\\Icon\\instagram.png",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "Icon/instagram-logo.png",
+      "destination": "backup_before_refactor\\Icon\\instagram-logo.png",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "Fonts/Grift-Regular.ttf",
+      "destination": "backup_before_refactor\\Fonts\\Grift-Regular.ttf",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "Fonts/Grift-ExtraBold.ttf",
+      "destination": "backup_before_refactor\\Fonts\\Grift-ExtraBold.ttf",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "Fonts/Grift-Bold.ttf",
+      "destination": "backup_before_refactor\\Fonts\\Grift-Bold.ttf",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "SFX/Think.mp3",
+      "destination": "backup_before_refactor\\SFX\\Think.mp3",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "SFX/Start.mp3",
+      "destination": "backup_before_refactor\\SFX\\Start.mp3",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "SFX/HUD.mp3",
+      "destination": "backup_before_refactor\\SFX\\HUD.mp3",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "SFX/Error.mp3",
+      "destination": "backup_before_refactor\\SFX\\Error.mp3",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "SFX/Done.mp3",
+      "destination": "backup_before_refactor\\SFX\\Done.mp3",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "deneme.py",
+      "destination": "backup_before_refactor\\deneme.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "backup",
+      "source": "",
+      "destination": "backup_before_refactor\\manifest-20260521-230721.json",
+      "status": "ok",
+      "detail": "manifest written"
+    },
+    {
+      "action": "case-rename",
+      "source": "Config",
+      "destination": "config",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "app",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "config",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "core",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "core/live",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "tools",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "automation",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "integrations",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "memory",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "security",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "ui",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "assets",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "assets/icons",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "assets/fonts",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "assets/sfx",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "network",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "utils",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "mkdir",
+      "source": "",
+      "destination": "scripts",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "app_config.py",
+      "destination": "config/app_config.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "core/config_live.py",
+      "destination": "config/live_config.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "core/Tolls.py",
+      "destination": "tools/declarations.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "core/live/jarvislive.py",
+      "destination": "core/live/session.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/browser.py",
+      "destination": "automation/browser.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/media.py",
+      "destination": "automation/media.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/shell.py",
+      "destination": "automation/shell.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/system_power.py",
+      "destination": "automation/system_power.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/whatsapp.py",
+      "destination": "automation/whatsapp.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/windows_utils.py",
+      "destination": "automation/windows_utils.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/calendar.py",
+      "destination": "integrations/calendar.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/weather.py",
+      "destination": "integrations/weather.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/youtube_stats.py",
+      "destination": "integrations/youtube_stats.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/reminders.py",
+      "destination": "integrations/reminders.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/screen_vision.py",
+      "destination": "integrations/screen_vision.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/tts.py",
+      "destination": "integrations/tts.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/health.py",
+      "destination": "integrations/health.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/open_app.py",
+      "destination": "integrations/open_app.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "actions/sys_info.py",
+      "destination": "integrations/system_info.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "memory/memory_manager.py",
+      "destination": "memory/manager.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "memory/_init_.py",
+      "destination": "memory/__init__.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "security.py",
+      "destination": "security/owner.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "ui/ui.py",
+      "destination": "ui/desktop.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "ui/_init_.py",
+      "destination": "ui/__init__.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "Config/api_keys.json",
+      "destination": "config/api_keys.json",
+      "status": "skip",
+      "detail": "same path"
+    },
+    {
+      "action": "move",
+      "source": "Config/api_keys.example.json",
+      "destination": "config/api_keys.example.json",
+      "status": "skip",
+      "detail": "same path"
+    },
+    {
+      "action": "move",
+      "source": "Icon/youtube.png",
+      "destination": "assets/icons/youtube.png",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "Icon/youtube-logo.png",
+      "destination": "assets/icons/youtube-logo.png",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "Icon/instagram.png",
+      "destination": "assets/icons/instagram.png",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "Icon/instagram-logo.png",
+      "destination": "assets/icons/instagram-logo.png",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "Fonts/Grift-Regular.ttf",
+      "destination": "assets/fonts/Grift-Regular.ttf",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "Fonts/Grift-ExtraBold.ttf",
+      "destination": "assets/fonts/Grift-ExtraBold.ttf",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "Fonts/Grift-Bold.ttf",
+      "destination": "assets/fonts/Grift-Bold.ttf",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "SFX/Think.mp3",
+      "destination": "assets/sfx/Think.mp3",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "SFX/Start.mp3",
+      "destination": "assets/sfx/Start.mp3",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "SFX/HUD.mp3",
+      "destination": "assets/sfx/HUD.mp3",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "SFX/Error.mp3",
+      "destination": "assets/sfx/Error.mp3",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "SFX/Done.mp3",
+      "destination": "assets/sfx/Done.mp3",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "move",
+      "source": "deneme.py",
+      "destination": "scripts/deneme.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "init",
+      "source": "",
+      "destination": "app/__init__.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "init",
+      "source": "",
+      "destination": "config/__init__.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "init",
+      "source": "",
+      "destination": "tools/__init__.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "init",
+      "source": "",
+      "destination": "automation/__init__.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "init",
+      "source": "",
+      "destination": "integrations/__init__.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "init",
+      "source": "",
+      "destination": "security/__init__.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "init",
+      "source": "",
+      "destination": "network/__init__.py",
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "action": "init",
+      "source": "",
+      "destination": "utils/__init__.py",
+      "status": "ok",
+      "detail": ""
+    }
+  ]
+}
